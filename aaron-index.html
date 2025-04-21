@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aaron Leopold | 1‑on‑1 Fitness Coaching</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- particles.js library -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <!-- Font Awesome for social icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-p1Cm/j+yZh3+DsHjf3JtKfGHs6Tm4HKpRu0kXpYtvhKYJp/wPEx41DfqC2z6y00Sda4I6m65+YulMYKZy6z4Bw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <!-- Theme Toggle Button -->
+  <button id="theme-toggle" class="theme-toggle">🌙</button>
+  <nav class="header-nav">
+    <div class="logo">Leopold Fitness</div>
+    <ul class="nav-links">
+      <li class="nav-item"><a href="#about">About Me</a></li>
+      <li class="nav-item"><a href="packages.html" class="btn-primary">Packages</a></li>
+      <li class="nav-item menu-item">
+        <button type="button" class="menu-toggle">Socials</button>
+        <ul class="dropdown">
+          <li><a href="https://twitter.com/yourhandle" target="_blank"><i class="fab fa-twitter"></i></a></li>
+          <li><a href="https://instagram.com/yourhandle" target="_blank"><i class="fab fa-instagram"></i></a></li>
+          <li><a href="https://facebook.com/yourpage" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Header with Particle Background -->     
+  <header id="home">
+    <div id="particles-js"></div>
+    <h1>Aaron Leopold</h1>
+    <p>1‑on‑1 Personalized Fitness Coaching</p>
+    <a href="#stats">Get Started</a>
+  </header>
+
+  <!-- Stats with Animated Counters -->
+  <section id="stats" class="hidden">
+    <div class="stat">
+      <span id="clients-count">0</span>
+      <p>Clients Trained</p>
+    </div>
+    <div class="stat">
+      <span id="lbs-count">0</span>
+      <p>Pounds Lost</p>
+    </div>
+  </section>
+
+  <!-- Polaroid Photo Marquee -->
+  <section id="photo-marquee" class="marquee-section hidden">
+    <div class="photo-marquee">
+      <div class="polaroid-card">
+        <img src="./assets/Author Photos/nick.jpeg" alt="Client Workout">
+        <p>Strength Session</p>
+      </div>
+      <div class="polaroid-card">
+        <img src="./assets/beautydomains.png" alt="Nutrition Plan">
+        <p>Meal Prep</p>
+      </div>
+      <div class="polaroid-card">
+        <img src="./assets/timothy-dexter.webp" alt="Progress Check">
+        <p>Progress Check</p>
+      </div>
+      <div class="polaroid-card">
+        <img src="./assets/logo_icon.png" alt="Outdoor Training">
+        <p>Outdoor Training</p>
+      </div>
+    </div>
+    </section>
+
+  <!-- FAQ Accordion -->
+  <section id="faq" class="hidden">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <h4>What is your coaching style?</h4>
+      <p>I focus on personalized plans, combining strength training, cardio, and nutrition to get you results safely and sustainably.</p>
+    </div>
+    <div class="faq-item">
+      <h4>Do you offer virtual sessions?</h4>
+      <p>Yes, I offer both in‑person and virtual coaching to accommodate your schedule and location.</p>
+    </div>
+    <div class="faq-item">
+      <h4>What if I need to reschedule?</h4>
+      <p>You can reschedule sessions up to 24 hours in advance without penalty.</p>
+    </div>
+  </section>
+
+  <!-- Reviews Carousel -->
+  <section id="reviews">
+    <h2>What Clients Are Saying</h2>
+    <div class="testimonial-cards">
+      <div class="testimonial-box active">
+        <span class="quote-icon top-left">“</span>
+        <div class="testimonial-content">
+          "Aaron transformed my fitness journey. The personalized approach kept me motivated and on track!"
+          <div class="author">- Jamie L.</div>
+        </div>
+        <span class="quote-icon bottom-right">”</span>
+      </div>
+      <div class="testimonial-box">
+        <span class="quote-icon top-left">“</span>
+        <div class="testimonial-content">
+          "I hit PRs I never thought possible. Aaron's guidance is top‑notch."
+          <div class="author">- Morgan S.</div>
+        </div>
+        <span class="quote-icon bottom-right">”</span>
+      </div>
+      <div class="testimonial-box">
+        <span class="quote-icon top-left">“</span>
+        <div class="testimonial-content">
+          "Flexible scheduling and expert advice. Couldn't ask for a better coach."
+          <div class="author">- Taylor R.</div>
+        </div>
+        <span class="quote-icon bottom-right">”</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Form -->
+  <section id="contact" class="hidden">
+    <h2>Ready to Start?</h2>
+    <form class="contact-form" action="mailto:aaron@leopoldfitness.com" method="post" enctype="text/plain">
+      <div class="form-group">
+        <label for="contact-name">Name</label>
+        <input id="contact-name" type="text" name="Name" placeholder="Your Name" required />
+      </div>
+      <div class="form-group">
+        <label for="contact-email">Email</label>
+        <input id="contact-email" type="email" name="Email" placeholder="Your Email" required />
+      </div>
+      <div class="form-group">
+        <label for="contact-message">Message</label>
+        <textarea id="contact-message" name="Message" rows="4" placeholder="Tell me about your goals..." required></textarea>
+      </div>
+      <div class="form-actions">
+        <button type="submit" class="btn-primary">Send Message</button>
+      </div>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Aaron Leopold Fitness Coaching. All rights reserved.
+  </footer>
+
+  <!-- Main Script -->
+  <script src="script.js"></script>
+</body>
+</html>

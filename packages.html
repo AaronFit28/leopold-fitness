@@ -1,0 +1,134 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Packages | Leopold Fitness</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Font Awesome (for icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-p1Cm/j+yZh3+DsHjf3JtKfGHs6Tm4HKpRu0kXpYtvhKYJp/wPEx41DfqC2z6y00Sda4I6m65+YulMYKZy6z4Bw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <!-- Fixed Top Navbar -->
+  <nav class="header-nav">
+    <div class="logo">Leopold Fitness</div>
+    <ul class="nav-links">
+      <li class="nav-item"><a href="aaron-index.html">Home</a></li>
+      <li class="nav-item"><a href="#packages" class="active">Packages</a></li>
+      <li class="nav-item"><a href="#about">About Me</a></li>
+      <li class="nav-item menu-item">
+        <button type="button" class="menu-toggle">Socials</button>
+        <ul class="dropdown">
+          <li><a href="https://twitter.com/yourhandle" target="_blank"><i class="fab fa-twitter"></i></a></li>
+          <li><a href="https://instagram.com/yourhandle" target="_blank"><i class="fab fa-instagram"></i></a></li>
+          <li><a href="https://facebook.com/yourpage" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <header id="packages-hero">
+    <h1>Our Coaching Packages</h1>
+    <p>Choose the plan that fits your goals and schedule.</p>
+  </header>
+
+  <!-- Packages Section -->
+  <section id="packages">
+    <div class="package-cards">
+      <!-- START Starter Card -->
+      <article class="package-card">
+        <div class="card-image">
+          <!-- placeholder SVG or icon -->
+          <img src="./assets/gaydomains.png" alt="Starter Icon">
+        </div>
+        <h3>Starter</h3>
+        <p>4 sessions per month tailored to your goals and schedule.</p>
+        <div class="dots">
+          <span class="active"></span><span></span><span></span><span></span>
+        </div>
+        <div class="card-footer">
+          <h4>Starter Plan — $199/month</h4>
+          <ul class="features">
+            <li>4 one‑on‑one workouts</li>
+            <li>Custom meal plan</li>
+            <li>Email support</li>
+          </ul>
+        </div>
+      </article>
+      <!-- END Starter Card -->
+  
+      <!-- Repeat for Pro -->
+      <article class="package-card">
+        <div class="card-image">
+          <img src="./assets/gaydomains.png" alt="Pro Icon">
+        </div>
+        <h3>Pro</h3>
+        <p>8 sessions per month with advanced tracking and nutrition guidance.</p>
+        <div class="dots">
+          <span></span><span class="active"></span><span></span><span></span>
+        </div>
+        <div class="card-footer">
+          <h4>Pro Plan — $349/month</h4>
+          <ul class="features">
+            <li>8 customized workouts</li>
+            <li>Nutrition coaching</li>
+            <li>Progress check‑ins</li>
+          </ul>
+        </div>
+      </article>
+  
+      <!-- Repeat for Elite -->
+      <article class="package-card">
+        <div class="card-image">
+          <img src="./assets/gaydomains.png" alt="Elite Icon">
+        </div>
+        <h3>Elite</h3>
+        <p>12 sessions per month plus 24/7 support and custom meal plans.</p>
+        <div class="dots">
+          <span></span><span></span><span class="active"></span><span></span>
+        </div>
+        <div class="card-footer">
+          <h4>Elite Plan — $499/month</h4>
+          <ul class="features">
+            <li>12 premium workouts</li>
+            <li>24/7 coach access</li>
+            <li>Personalized meal plans</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Contact Section Anchor for Plan Selection -->
+  <section id="contact" class="hidden">
+    <h2>Ready to Start?</h2>
+    <form class="contact-form" action="mailto:aaron@leopoldfitness.com" method="post" enctype="text/plain">
+      <div class="form-group">
+        <label for="contact-name">Name</label>
+        <input id="contact-name" type="text" name="Name" placeholder="Your Name" required/>
+      </div>
+      <div class="form-group">
+        <label for="contact-email">Email</label>
+        <input id="contact-email" type="email" name="Email" placeholder="Your Email" required/>
+      </div>
+      <div class="form-group">
+        <label for="contact-message">Message</label>
+        <textarea id="contact-message" name="Message" rows="4" placeholder="Which package are you interested in?" required></textarea>
+      </div>
+      <div class="form-actions">
+        <button type="submit" class="btn-primary">Send Message</button>
+      </div>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Leopold Fitness. All rights reserved.
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
