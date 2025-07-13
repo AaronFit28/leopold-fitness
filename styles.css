@@ -2,45 +2,11 @@
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body {
   font-family: 'Arial', sans-serif;
-  background-color: #121212;
-  color: #f5f5f5;
+  background-color: #fafafa;
+  color: #121212;
   scroll-behavior: smooth;
   transition: background 0.3s, color 0.3s;
 }
-
-/* Light Mode*/
-.light-mode {
-  background-color: #fafafa;
-  color: #121212;
-}
-
-.light-mode .faq-item {
-  border-color: #ccc;
-}
-.light-mode #contact .contact-form {
-  border-color: #333;
-}
-.light-mode section,
-.light-mode .package-card,
-.light-mode .testimonial-box {
-  border-color: #ccc;
-}
-
-.light-mode .package-card {
-  border: 2px solid #333;
-}
-
-.light-mode .testimonial-box {
-  border: 2px solid #333;
-}
-
-.light-mode .faq-item {
-  border-color: #ccc;
-}
-.light-mode #contact .contact-form {
-  border-color: #333;
-}
-
 
 /* Section separators */
 section {
@@ -80,7 +46,7 @@ header {
   background-position: center;
   overflow: hidden;
 }
-body.light-mode header { background: #fff; }
+
 #particles-js {
   position: absolute;
   top: 0; left: 0;
@@ -93,9 +59,10 @@ header h1, header p, header a {
 header h1 {
   font-size: 3rem;
   margin-bottom: .5rem;
-  color: #ff4081;
+  color: #b22408;
 }
 header p {
+  color: #fafafa;
   font-size: 1.2rem;
   margin-bottom: 1.5rem;
 }
@@ -188,12 +155,12 @@ header a:hover { background-color: #5393ff; }
     gap: 2rem;
     justify-content: center;
     padding: 60px 20px;
-    background: #121212;
+    background: #fafafa;
   }
   
   .package-card {
-    background: #1e1e1e;
-    border: 2px solid #fff;
+    background: #121212;
+    border: 2px solid #121212;
     border-radius: 15px;
     width: 300px;
     overflow: hidden;
@@ -212,12 +179,13 @@ header a:hover { background-color: #5393ff; }
   .package-card h3 {
     font-size: 1.5rem;
     margin: 1rem;
-    color: #ff4081;
+    color: #b22408;
   }
   
   .package-card p {
     margin: 0 1rem 1rem;
     line-height: 1.4;
+    color: #fafafa;
   }
   
   .package-card .dots {
@@ -225,6 +193,7 @@ header a:hover { background-color: #5393ff; }
     justify-content: center;
     gap: 8px;
     margin-bottom: 1rem;
+    margin-top: auto;
   }
   
   .package-card .dots span {
@@ -236,13 +205,12 @@ header a:hover { background-color: #5393ff; }
   }
   
   .package-card .dots span.active {
-    background: #ff4081;
+    background: #b22408;
   }
   
   .package-card .card-footer {
     background: #121212;
     padding: 1rem;
-    margin-top: auto;
   }
   
   .package-card .card-footer h4 {
@@ -263,6 +231,40 @@ header a:hover { background-color: #5393ff; }
     color: #ddd;
     font-size: 0.9rem;
   }
+
+/* ---- Buy‑Now button ---- */
+.btn-buy {
+  text-decoration: none;
+  background-color: #121212;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.btn-buy:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+  .gif-container {
+    position: relative;
+    display: inline-block;
+  }
+
+  .gif-container img {
+    display: block;
+    max-width: 100%;
+  }
+
+  .gif-container .animated {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  .gif-container:hover .animated {
+    opacity: 1;
+  }
+
 
 /* FAQ Accordion */
 #faq { padding: 60px 20px; }
@@ -316,7 +318,7 @@ header a:hover { background-color: #5393ff; }
 .quote-icon {
   position: absolute;
   font-size: 5rem;
-  color: #ff4081;
+  color: #b22408;
   z-index: 1;
 }
 .quote-icon.top-left {
@@ -426,8 +428,10 @@ footer {
 
 /* Global Fixed Top Navbar */
 .header-nav {
-  position: relative;           /* nav now sits in normal flow under header */
-  background: #000;
+  position: fixed;           /* nav now sits in normal flow under header */
+  top: 0;
+  width: 100%;
+  background: #121212;
   padding: 0.5rem 2rem;
   display: flex;
   justify-content: center;      /* center the nav content */
@@ -461,7 +465,7 @@ footer {
   border-color: #fff;
 }
 .header-nav .nav-links .btn-primary {
-  background: #ff4081;
+  background: #b22408;
   color: #fff;
   padding: 0.5rem 1rem;
   border-radius: 4px;
@@ -509,3 +513,75 @@ footer {
   font-size: 1.25rem;
   text-decoration: none;
 }
+/* Media Grid */
+.media-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  padding: 60px 20px;
+}
+
+.media-card {
+  background: #1e1e1e;
+  border: 2px solid #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+
+.media-card img,
+.media-card video,
+.media-card iframe {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.media-card figcaption {
+  padding: 0.75rem 1rem;
+  font-size: 0.9rem;
+  color: #ddd;
+  text-align: center;
+}
+
+/* Social Grid */
+.social-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 60px 20px;
+}
+
+.social-card {
+  width: 180px;
+  background: #1e1e1e;
+  border: 2px solid #fff;
+  border-radius: 12px;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  color: #fff;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: background 0.3s;
+}
+
+.social-card i {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.social-card span {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* Hover color pops */
+.social-card.instagram:hover { background: #e13584; }
+.social-card.tiktok:hover    { background: #111;      }
+.social-card.youtube:hover   { background: #ff0000;   }
+.social-card.x:hover         { background: #000;      }

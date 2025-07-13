@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Media | Aaron Leopold Fitness</title>
+
+  <!-- Shared stylesheet & libs -->
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-p1Cm/j+yZh3+DsHjf3JtKfGHs6Tm4HKpRu0kXpYtvhKYJp/wPEx41DfqC2z6y00Sda4I6m65+YulMYKZy6z4Bw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+  <!-- ===== Hero ===== -->
+  <header id="home">
+    <div id="particles-js"></div>
+    <h1>Training&nbsp;Media</h1>
+    <p>Watch me lift, learn proper form, and get inspired 💪</p>
+  </header>
+
+  <!-- ===== Global Nav ===== -->
+  <nav class="header-nav">
+    <ul class="nav-links">
+      <li class="nav-item"><a href="index.html">Home</a></li>
+      <li class="nav-item"><a href="packages.html">Coaching</a></li>
+      <li class="nav-item"><a href="about.html">About Me</a></li>
+      <li class="nav-item"><a href="#" class="active">Media</a></li>
+      <li class="nav-item"><a href="socials.html">Socials</a></li>
+    </ul>
+  </nav>
+
+  <!-- ===== Workout Videos ===== -->
+  <section id="videos" class="hidden">
+    <h2 style="padding-top: 1%;">Latest Workout Videos</h2>
+    <div class="media-grid">
+      <!-- Local MP4 example -->
+      <figure class="media-card">
+        <video src="./assets/deadlift.mp4" poster="./assets/deadlift.jpg" controls></video>
+        <figcaption>Conventional Deadlift 5×5 @ 180 kg</figcaption>
+      </figure>
+
+      <!-- YouTube embed example -->
+      <figure class="media-card">
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID"
+                loading="lazy" allowfullscreen></iframe>
+        <figcaption>How to Perfect Your Squat</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ===== Photo / GIF Gallery ===== -->
+  <section id="gallery" class="hidden">
+    <h2>Photo Gallery</h2>
+    <div class="media-grid">
+      <figure class="media-card"><img src="./assets/pullup.jpg"  alt="Wide-grip pull-up" /></figure>
+      <figure class="media-card"><img src="./assets/benchpress.jpg" alt="Bench-press PR" /></figure>
+      <figure class="media-card"><img src="./assets/sledpush.gif"  alt="Sled push" /></figure>
+      <!-- Add as many as you like -->
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer>
+    &copy; 2025 Leopold Fitness. All rights reserved.
+  </footer>
+
+  <!-- Shared script (theme toggle, scroll reveal, etc.) -->
+  <script src="script.js"></script>
+</body>
+</html>
