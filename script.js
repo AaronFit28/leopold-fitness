@@ -1,3 +1,23 @@
+// ----- Dynamic marquee duplication & timing -----
+function setupMarquee() {
+  const track = document.querySelector('.photo-marquee');
+  if (!track) return;
+
+  // Duplicate items once for seamless scroll
+  track.innerHTML += track.innerHTML;
+
+  // Calculate scroll distance (half of duplicated width) & duration
+  const gap = parseInt(getComputedStyle(track).gap) || 0;   // NEW
+  const distance = track.scrollWidth / 2 - gap;             // NEW
+  const speed    = 10;                     // px per second
+  const duration = distance / speed;        // seconds
+
+  // Expose as CSS variables read by keyframes
+  track.style.setProperty('--marquee-distance', `${distance}px`);
+  track.style.setProperty('--marquee-duration', `${duration}s`);
+}
+window.addEventListener('load', setupMarquee);
+
 window.addEventListener('DOMContentLoaded', () => {
     // 1. FAQ Accordion Toggle
     document.querySelectorAll('.faq-item h4').forEach(header => {
@@ -26,7 +46,10 @@ window.addEventListener('DOMContentLoaded', () => {
         t.classList.toggle('active', j === i);
       });
     }
-    showTestimonial(tIdx);
+    // delay first reveal slightly so the slide‑in animation runs
+    setTimeout(() => {
+      showTestimonial(tIdx);
+    }, 100);
     setInterval(() => {
       tIdx = (tIdx + 1) % testimonials.length;
       showTestimonial(tIdx);
@@ -50,20 +73,27 @@ window.addEventListener('DOMContentLoaded', () => {
       retina_detect: true
     });
   
-    // 5. Animated Stat Counters
-    function animateCount(el, end) {
+    // ---- Animated counter with adjustable duration ----
+    function animateCount(el, end, duration = 2000) {
       let start = 0;
-      const stepTime = Math.abs(Math.floor(2000 / end));
+      const frame = 20;                         // ms between UI updates (~50 fps)
+      const steps = Math.ceil(duration / frame);
+      const increment = Math.ceil(end / steps); // amount added each tick
+
       const timer = setInterval(() => {
-        el.textContent = ++start;
-        if (start === end) clearInterval(timer);
-      }, stepTime);
+        start += increment;
+        if (start >= end) {
+          start = end;
+          clearInterval(timer);
+        }
+        el.textContent = start.toLocaleString();
+      }, frame);
     }
     const statsObs = new IntersectionObserver(entries => {
       entries.forEach(e => {
         if (e.isIntersecting) {
-          animateCount(document.getElementById('clients-count'), 150);
-          animateCount(document.getElementById('lbs-count'), 200);
+          animateCount(document.getElementById('exp-count'), 60, 5000);        // clients – keep 2 s
+          animateCount(document.getElementById('follower-count'), 11000, 3000); // followers – ~0.8 s
           statsObs.unobserve(e.target);
         }
       });
@@ -82,15 +112,5 @@ window.addEventListener('DOMContentLoaded', () => {
       document.body.classList.toggle('light-mode');
       toggle.textContent = document.body.classList.contains('light-mode') ? '☀️' : '🌙';
     });
-
-    // Toggle menu (social links) dropdown
-    const menuBtn = document.querySelector('.header-nav .menu-item > button');
-    menuBtn.addEventListener('click', e => {
-      e.currentTarget.parentElement.classList.toggle('open');
-    });
-    document.addEventListener('click', e => {
-      if (!e.target.closest('.header-nav .menu-item')) {
-        document.querySelector('.header-nav .menu-item.open')?.classList.remove('open');
-      }
-    });
+  
   });

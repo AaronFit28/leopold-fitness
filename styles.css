@@ -7,10 +7,40 @@ body {
   scroll-behavior: smooth;
   transition: background 0.3s, color 0.3s;
 }
+
+/* Light Mode*/
 .light-mode {
   background-color: #fafafa;
   color: #121212;
 }
+
+.light-mode .faq-item {
+  border-color: #ccc;
+}
+.light-mode #contact .contact-form {
+  border-color: #333;
+}
+.light-mode section,
+.light-mode .package-card,
+.light-mode .testimonial-box {
+  border-color: #ccc;
+}
+
+.light-mode .package-card {
+  border: 2px solid #333;
+}
+
+.light-mode .testimonial-box {
+  border: 2px solid #333;
+}
+
+.light-mode .faq-item {
+  border-color: #ccc;
+}
+.light-mode #contact .contact-form {
+  border-color: #333;
+}
+
 
 /* Section separators */
 section {
@@ -50,7 +80,7 @@ header {
   background-position: center;
   overflow: hidden;
 }
-header.light-mode { background: #fff; }
+body.light-mode header { background: #fff; }
 #particles-js {
   position: absolute;
   top: 0; left: 0;
@@ -95,13 +125,15 @@ header a:hover { background-color: #5393ff; }
 .marquee-section {
   padding: 40px 20px;
   background-color: #1a1a1a;
+  overflow: hidden;         /* hide scrolling overflow */
 }
 .photo-marquee {
   display: flex;
-  overflow: hidden;
+  overflow: visible;          /* let items scroll outside */
+  width: max-content;   /* make the strip as wide as its cards */
   gap: 20px;
   padding: 10px;
-  animation: marquee 15s linear infinite alternate;
+  animation: marquee var(--marquee-duration, 20s) linear infinite;
 }
 .polaroid-card {
   background: #fff;
@@ -130,8 +162,8 @@ header a:hover { background-color: #5393ff; }
   font-weight: bold;
 }
 @keyframes marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-600px); }
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(calc(-1 * var(--marquee-distance, 50%))); }
 }
 
 /* Stats Section */
@@ -272,11 +304,13 @@ header a:hover { background-color: #5393ff; }
   padding: 2rem;
   border: 2px solid currentColor;
   border-radius: 10px;
-  transition: opacity 0.5s ease;
+  transform: translateX(120%); /* start off-screen right */
+  transition: transform 0.5s ease, opacity 0.5s ease;
   box-sizing: border-box;
   z-index: 0;
 }
 .testimonial-box.active {
+  transform: translateX(0); /* slide in to position */
   opacity: 1;
 }
 .quote-icon {
@@ -392,14 +426,12 @@ footer {
 
 /* Global Fixed Top Navbar */
 .header-nav {
-  position: fixed;
-  top: 0; left: 0; right: 0;
+  position: relative;           /* nav now sits in normal flow under header */
   background: #000;
   padding: 0.5rem 2rem;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;      /* center the nav content */
   align-items: center;
-  z-index: 1000;
 }
 .header-nav .logo {
   font-size: 1.5rem;
@@ -408,12 +440,13 @@ footer {
 }
 .header-nav .nav-links {
   display: flex;
+  justify-content: center;
   list-style: none;
   margin: 0;
   padding: 0;
 }
 .header-nav .nav-links .nav-item {
-  margin-left: 2rem;
+  margin: 0 1rem;
 }
 .header-nav .nav-links a {
   color: #fff;
